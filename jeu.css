@@ -1,0 +1,228 @@
+/* Permet de centrer un blockinline dans un élément block. La commande Display:; block; nous permet de transformer une balise de type inline en type block pour répondre à nos besoins*/
+.centrage_inline
+{
+	margin: 0 auto;
+	width: 600px;
+	text-align: center;
+	display: block;
+}
+.centrage_img
+{
+	margin: 0 auto;
+	display: block;
+}
+.bloc_texte
+{
+	margin-top: 20px;
+	text-align: justify;
+}
+.frise
+{
+	max-width: 1024px;
+}
+.groundhog
+{
+	float: left;
+	height: 200px;
+	margin-right: 15px;
+}
+body
+{
+	max-width: 1024px;
+	margin: 15px auto 5px auto;
+	background-color: #643211;
+	color: #FFD581;
+}
+@font-face
+{
+	font-family: "western-titre";
+	src: url("font/Anderson_Thunderbirds.ttf");
+}
+@font-face
+{
+	font-family: "western-texte";
+	src: url("font/Pixelcowboy.otf");
+}
+p
+{
+	font-family: "western-texte";
+	font-size: 22px;
+}
+/*h1,h3 indique le font family pour les deux éléments ensuite on fait un distingo car le font-size est différent pour chacun*/
+h1,h2
+{
+	font-family: "western-titre";
+	text-align: center;
+}
+h1
+{
+	font-size: 120px;
+	text-shadow: #B5833A 20px 20px 5px;
+}
+h2
+{
+	font-size: 40px;
+}
+h3
+{
+	font-size: 20px;
+}
+footer h3 span.copyright
+{
+	font-style: italic;
+}
+footer h3 span.annee
+{
+	text-decoration: underline; 
+}
+ul
+{
+	margin: 0 auto;
+	width: 626px;
+}
+li
+{
+	font-family: "western-texte";
+	font-size: 36px;
+	margin: 0 28px;
+	display: inline;
+	text-decoration: ;
+}
+li a
+{
+	color: #72a0ff;
+}
+li a:hover
+{
+	color: red;
+}
+li a:visited
+{
+	color: #b75ee8;
+}
+form label
+{
+	vertical-align: top;
+}
+form div label:first-child
+{
+	width: 75px;
+	display: inline-block;
+}
+form div
+{
+	margin-top: 5px;
+}
+@media screen and (min-width:1024px) 
+{
+	.conteneur_inline .bloc_texte /* les deux classes à suivre signifie que l'on agit sur les bloc_texte contenus dans .conteneur inline */
+	{
+		margin: 0px;
+		width: 488px;
+		display: inline-block;
+	}
+	.separateur
+	{
+		width: 40px;
+		display: inline-block;
+	}
+}
+@media screen and (max-width:1023px) 
+{
+	.conteneur_inline .bloc_texte /*on pourrait se passer de cette classe du fait des media queries mais en le rajoutant on spécifie le display: block;*/
+	{
+		display: block;
+	}
+	.bloc_texte
+	{
+		margin: 0 30px;
+	}
+	.separateur
+	{
+		width: 0px;
+		display: none;
+	}
+	.frise
+	{
+		display: none; 
+	}
+}
+
+/*---    PAGE DES SCORES   ---*/
+.tableau_scores{
+	margin: 0 auto;
+	max-width: 600px;
+	border : 1px solid black;
+	border-collapse: collapse;
+}
+.tableau_scores tr td, .tableau_scores tr th{
+	border : 1px solid black;
+	text-align: center;
+}
+.highlight_first td:not(:first-child), .highlight_second td:not(:first-child), .highlight_third td{
+	font-weight: bold;
+}
+.highlight_first td:not(:first-child){
+	background-color: #265baf;
+}
+.highlight_second td:not(:first-child){
+	background-color: #2d9923;
+}
+.highlight_third td{
+	background-color: #8e8120;
+}
+
+/*	On cache la colonne des meilleurs scores en dessous de 480px	*/
+@media (max-width:480px)  {  
+	table tr td.best ~ td:nth-child(-n+5), table tr td.besttr ~ td:nth-child(-n+6){
+		display: none;
+	}
+	table tr th.col_best{
+		display: none;
+	}
+}
+
+/*	On cache la colonne des 3 derniers temps en dessous de 800px	*/
+@media (max-width:800px)  { 
+	/*		La class .last3 est un séparateur, on cachera les 3 td suivants	*/
+	table tr td.last3 ~ td:nth-child(-n+4), table tr td.last3tr ~ td:nth-child(-n+5){
+		display: none;
+	}
+	table tr th.col_last3{
+		display: none;
+	}
+	
+}
+
+/*---	Page à propos	---*/
+.horiz_blocks{
+	display: inline-block;
+	width: 480px;
+}
+.horiz_blocks img{
+	float: left;
+	width: 150px;
+	margin: 0 10px 10px 0;
+}
+.container{
+	padding: 8px;
+}
+.separator{
+	width: 40px;
+	display: inline-block;
+}
+/*	On remet les deux blocks en display:block en dessous de 1024px;	*/
+@media (max-width:1024px)  { 
+	/*		La class .last3 est un séparateur, on cachera les 3 td suivants	*/
+	.horiz_blocks{
+		display: block;
+		width: auto;
+	}
+	
+}
+.mega_highlight{
+	font-weight: bolder;
+	/*text-decoration: underline;*/
+	font-style: italic;
+	color :#fc3f3f;
+}

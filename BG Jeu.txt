@@ -1,0 +1,5 @@
+Titre "The Gold Rusher"
+Definition de l'univers du jeu:
+Type Gold Rush - Un mineur va récupérer des minerais dans des mines/filons sur une ambiance western.
+		
+
